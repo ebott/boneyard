@@ -47,5 +47,6 @@ int main()
    char* pswd = getpass3();
    cout << *(pswd+1) << endl;
 
+   delete[] pswd;
    cout << "aaaaand done" << endl;
 }
