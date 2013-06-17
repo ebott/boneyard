@@ -37,5 +37,6 @@ int main()
    char* pswd = getpass2();
    cout << *pswd << endl;
 
+
    cout << "aaaaand done" << endl;
 }
