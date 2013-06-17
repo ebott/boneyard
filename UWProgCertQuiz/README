@@ -1,1 +1,34 @@
+Questions from this quiz:
+https://catalyst.uw.edu/webq/survey/nielsen/150207?solstice_selected_button=btn_439c60ef839ba5ec24f30a357cd7dd4a_1&sol_button_data_btn_439c60ef839ba5ec24f30a357cd7dd4a_1=a6e0cdd3aad112f985c5ac6b9923ab92cd834df1cd77c34d35a38c430eb7752fdd9abb1ae33ddf9b558dbe754ad1baeccd2834e2a52fb0bdec8eaeb056f5e7459692e66383c35e1cb194d0cad26cc96e45ffbe565c737bb03bb4806a7c455252da80de244e20fa76d432b903bc82512e94a88d8d3cc11a9938487d6e0b909f11dcb46214fb7b6873948a7cc1f3129759
+
+
+Question 3.
+What's wrong with this C function?
+
+char* getpass()
+{
+    char password[10];
+    scanf("%s\n", password);
+    return password;
+} 
+
+Question 6.
+Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz". 
+
+Question 7.
+Write a main program that dynamically allocates memory (e.g., with malloc or new) for a string which could contain up to 256 characters. Copy your name into the allocated string. Be sure to clean up prior to exiting main(). 
+
+
+Question 8.
+Write a function printNumbers() that uses pass by value to print out the values of two passed in numbers. Call this function from a main program.
+
+Question 9.
+Write a function getfloats() that uses pass by reference to return two floating point values to the calling program. Inside the function, use printf to request the user enter two floating point values. Inside the function, use scanf to read the floating point values from the input. Call this function from a main program. In the main program, print the values returned by reference  from the function.
+
+Question 10.
+Write a main program that removes whitespace from a string. 
+
+Question 11.
+Write a program that defines and uses a struct to store information about an employee.  Provide for storing their first and last names, employee number, and salary. Write a main program that initializes the struct for a typical employee. 
+
 
