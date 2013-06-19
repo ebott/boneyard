@@ -38,7 +38,7 @@ void pointertime()
    std::cout << v[1] << std::endl;
 
    //pointer time!
-   int* p = &v[0];
+   int* p = &v[1];
    std::cout << p << std::endl;
    std::cout << *p << std::endl;
    ++p;
