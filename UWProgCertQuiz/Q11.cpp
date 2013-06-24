@@ -30,4 +30,9 @@ int main()
    winston.salary = 23.45;
 
    printEmployee(winston);
+   std::cout << std::endl;
+   //try an initializer list
+   Employee franko = { "Frank", "OoooSnap", 12345, 600000 };
+
+   printEmployee(franko);
 }
