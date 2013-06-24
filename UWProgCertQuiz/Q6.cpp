@@ -20,36 +20,26 @@ int main()
    for(int i=0; i<=100; ++i)
    {
       bool buzzed = false;
-      bool fizzed = false;
 
       if(modTrue(i,3))
       {
-         fizzed = true;
+         buzzed = true;
+         cout << "Fizz";
       } 
       
       
       if(modTrue(i,5))
       {
          buzzed = true;
-      }
-
-      if(buzzed&&fizzed)
-      {
-           cout << "Fizzbuzz";
-      }
-      else if(buzzed)
-      {
          cout << "Buzz";
       }
-      else if(fizzed)
-      {
-         cout << "Fizz";
-      }
-      else
+
+      if(!buzzed)
       {
          cout << i;
       }
-      cout <<endl;
+
+      cout << endl;
    }
 
 }
