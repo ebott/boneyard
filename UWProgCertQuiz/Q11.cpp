@@ -2,11 +2,20 @@
 
 struct Employee
 {
-   std::string fName;   
-   std::string lName;
-   int EIN;
-   double salary;
+      std::string fName;   
+      std::string lName;
+      int EIN;
+      double salary;
+
+      void print();
 };
+
+void Employee::print()
+{
+   std::cout << "well yeah." << std::endl;
+   
+   std::cout << EIN << std::endl;
+}
 
 void printEmployee(Employee p)
 {
@@ -35,4 +44,7 @@ int main()
    Employee franko = { "Frank", "OoooSnap", 12345, 600000 };
 
    printEmployee(franko);
+
+   franko.print();
+   winston.print();
 }
