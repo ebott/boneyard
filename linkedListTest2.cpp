@@ -5,9 +5,7 @@ struct node_t
    node_t(int node_value)
       :value_(node_value)
       ,next_(nullptr)
-   {
-      //std::cout << "Constructing..." << std::endl;
-   }
+   {}
 
    int value() const
    {
@@ -43,7 +41,7 @@ struct list_t
    {}
 
    //methods, public
-   void print_list()
+   void print_list() const
    {
       std::cout << "Printing List..." << std::endl;
       node_t* iter_node = head_node_;
@@ -87,15 +85,6 @@ struct list_t
       pre_doomed_node->next(post_doomed_node);
    }
 
-   void TEMP_SWAP()
-   {
-      node_t* node_T = get_node_number(2);
-      node_t* node_A = get_node_number(3);
-      node_t* node_B = get_node_number(4);
-
-      swap_pairs(node_T, node_A, node_B);     
-   } 
-   
    void sort_list()
    {
       //le bubble oui!
@@ -141,10 +130,29 @@ struct list_t
       }
    }
 
+   void reverse_list()
+   {
+      node_t* prev_node = head_node_;
+      node_t* reverser = head_node_->next();
+      node_t* next_node = reverser;
+      do
+      {
+         next_node = next_node->next();
+         reverser->next(prev_node);
+         prev_node = reverser;
+         reverser = next_node;
+      } while(next_node->next() != nullptr);
+      //point to new head, kill ptr at new tail
+      head_node_->next(nullptr);
+      head_node_ = next_node;
+      head_node_->next(prev_node);
+   }
+
    private:
       struct node_t* head_node_;
+      
       //methods, private to list
-      void swap_pairs(node_t* node_T, node_t* node_A, node_t* node_B)
+      void swap_pairs(node_t* node_T, node_t* node_A, node_t* node_B) const
       {
          //swaps A with B, also needs Trailer (T)
          //operation: T->A->B => T->B->A
@@ -171,7 +179,7 @@ struct list_t
   
       }
 
-      void swap_tail(node_t* node_T, node_t* node_A, node_t* node_B)
+      void swap_tail(node_t* node_T, node_t* node_A, node_t* node_B) const
       {  
          //special case at end of list
          //T->A->B => T->B->A
@@ -180,7 +188,7 @@ struct list_t
          node_T->next(node_B); 
       }
 
-      node_t* get_end_node()
+      node_t* get_end_node() const
       {
          node_t* iter_node = head_node_;
          while(iter_node->next() != nullptr)
@@ -190,7 +198,7 @@ struct list_t
          return iter_node;
       }
    
-      node_t* get_node_number(int position)
+      node_t* get_node_number(int position) const
       {
          node_t* iter_node = head_node_;
          for(int i=0; i<position-1; ++i)
@@ -223,5 +231,8 @@ int main()
    mList->print_list();
 
    mList->sort_list();
+   mList->print_list();
+
+   mList->reverse_list();
    mList->print_list();
 }
