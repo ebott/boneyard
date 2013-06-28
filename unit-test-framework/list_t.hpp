@@ -3,9 +3,33 @@
 #include <iosfwd>
 #include "node_t.hpp"
 
+/**
+ * @file
+ */
+
+/**
+ * A classic forward linked list.
+ */
 struct list_t
 {
-   // explain why, not how or what with your comments
+   // explain why, not how or what with your comments.
+   // rationale: your reader is a c++ programmer, let him
+   // know the how and the what from the code itself. if you
+   // do something edgy or interesting, explain yourself
+   // with comments. this leads the programmer to write code
+   // which is largely self explanatory with minimal
+   // commentary.
+   //
+   // also, this project is set up to use doxygen (pacman -S
+   // doxygen). I'll add doxygen documentation to print_list
+   // and get_node_number for you as examples. Just run
+   // doxygen at the command line to generate the
+   // documentation. It will appear under a new directory
+   // called html (and latex). Open index.html. Even without
+   // adding any doxygen markup, you'll see that there is a
+   // decent amount of documentation doxygen can generate
+   // for you anyway. 
+ 
    //constructor
    list_t(int initial_val)
       :head_node_(new node_t(initial_val))
@@ -13,7 +37,9 @@ struct list_t
 
    // ~list_t()? valgrind it out :)
 
-   //methods, public
+   /**
+    * Write the list to stdout.
+    */
    void print_list() const
    {
       // consider implementing this as operator<< over an
@@ -206,6 +232,13 @@ public:
       // at an index. This will of course be O(n). Try not
       // to use this function throughout the class. Try to
       // deal strictly in node_t pointers.
+
+      /**
+       * Access a node by index.
+       * @param[in] position one-based offset from the head
+       * of the list
+       * @return pointer to the node
+       */
       node_t* get_node_number(int position) const
       {
          // zero indexed would be less surprising to
