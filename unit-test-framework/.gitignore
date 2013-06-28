@@ -1,0 +1,6 @@
+.*.d
+.*.o
+.test-*
+unit-test-framework
+html
+latex
