@@ -19,6 +19,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#define BOOST_TEST_DYN_LINK
+#define BOOST_TEST_MAIN
+#include <boost/test/unit_test.hpp>
 #include "stream_saver_t.hpp"
 
 inline std::string vecstr(const std::vector<char>& rhs)
@@ -31,6 +34,12 @@ inline std::vector<char> vecstr(const std::string& rhs)
 {
    std::vector<char> v(rhs.begin(), rhs.end());
    return v;
+}
+
+inline std::ostream& operator<<(std::ostream& os, const std::nullptr_t& rhs)
+{
+   os << "nullptr";
+   return os;
 }
 
 inline std::ostream& operator<<(std::ostream& os, const std::vector<char>& rhs)
