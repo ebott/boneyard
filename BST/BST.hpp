@@ -10,6 +10,11 @@ struct BST
    BST(int root_key, string root_val)
       :root_(new BST_node(root_key, root_val))
    {}
+
+   ~BST()
+   {
+      // TODO recursively delete nodes
+   }
 /*
    void insert_node(int new_key, string new_val)
    {
