@@ -60,7 +60,6 @@ struct BST
       auto insert_fcn = [&] (BST_node* n)
       {
          BST_node* new_node = new BST_node(new_key,new_val);
-         cout << "hitting the func!" << endl;
          if(new_key <= n->key())
          {
             //this convention means that dupe keys
@@ -170,7 +169,7 @@ struct BST
                hit_fcn(curr_node);
                searching = false;
             }
-            else if(target_key > curr_node->key())
+            else if(target_key < curr_node->key())
             {
                //move left or return
                if(curr_node->l_child())
@@ -183,7 +182,7 @@ struct BST
                   searching = false;
                }
             }
-            else if(target_key < curr_node->key())
+            else if(target_key > curr_node->key())
             {
                //move right or return
                if(curr_node->r_child())
