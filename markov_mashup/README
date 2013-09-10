@@ -1,0 +1,3 @@
+i am going to try to make a project that reads in a large file, like
+a book form a specific author, then does a markov analysis to make a 
+"proto sentence" based off its probability analysis.
