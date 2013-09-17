@@ -18,6 +18,11 @@ struct component
       {
          string buff;
          Prefix prefix;
+         for(size_t j=0; j < prefix_len_; ++j)
+            {
+               prefix.push_back("\n");
+            }
+
          ifstream infile (filename_);
 
          while(!getline(infile,buff).eof())
@@ -26,7 +31,7 @@ struct component
          }
 
          gen_output();
-      }
+      } 
 
    ~component()
    {
@@ -115,5 +120,6 @@ struct component
             chain_prefix.pop_front();
             chain_prefix.push_back(word);
          }
+         cout << "." << endl;
       }
 };
