@@ -11,33 +11,36 @@ using namespace std;
 struct component
 {
 
-   component(string inputfile, int words, int length)
+   component(string inputfile)
       :filename_(inputfile)
-      ,outwords_(words)
-      ,prefix_len_(length)
-      {
-         string buff;
-         Prefix prefix;
-         for(size_t j=0; j < prefix_len_; ++j)
-            {
-               prefix.push_back("\n");
-            }
-
-         ifstream infile (filename_);
-
-         while(!getline(infile,buff).eof())
-         {
-            parse_words(prefix, buff);
-         }
-
-         gen_output();
-      } 
+      {} 
 
    ~component()
    {
       /*
       TODO: this!
       */
+   }
+
+   void generate(int ows, size_t pl)
+   {
+      outwords_ = ow;
+      prefix_len_ = pl;
+      string buff;
+      Prefix prefix;
+      for(size_t j=0; j < prefix_len_; ++j)
+         {
+            prefix.push_back("\n");
+         }
+
+      ifstream infile (filename_);
+
+      while(!getline(infile,buff).eof())
+      {
+         parse_words(prefix, buff);
+      }
+
+      gen_output();
    }
 
    private:

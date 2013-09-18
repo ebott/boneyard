@@ -3,7 +3,8 @@
 
 TEST(basic)
 {
-   component testor("Ulysses.txt",50,2);
+   component testor("Ulysses.txt");
 
-   //component testor("short_test.txt", 5, 2);
+   testor.generate(50,2);
+
 }
