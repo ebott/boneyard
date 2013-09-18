@@ -24,7 +24,7 @@ struct component
 
    void generate(int ows, size_t pl)
    {
-      outwords_ = ow;
+      outwords_ = ows;
       prefix_len_ = pl;
       string buff;
       Prefix prefix;
