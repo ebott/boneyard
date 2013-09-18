@@ -10,7 +10,8 @@ struct markov_reader
    markov_reader(string inputfile)
       :filename_(inputfile)
    {
-      chain = new markov_chainer(2);
+      PREFIX_LEN = 2;
+      chain = new markov_chainer(PREFIX_LEN);
       read_lines();
    }
 
